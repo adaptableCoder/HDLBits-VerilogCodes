@@ -1,3 +1,15 @@
+module parity (
+    input clk,
+    input reset,
+    input in,
+    output reg odd);
+
+    always @(posedge clk)
+        if (reset) odd <= 0;
+        else if (in) odd <= ~odd;
+
+endmodule
+
 module top_module(
     input clk,
     input in,
